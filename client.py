@@ -8,11 +8,16 @@ import socket
 
 # Constantes. Dirección IP del servidor y contenido a enviar
 
-SERVER = sys.argv[1]
-PORT = int(sys.argv[2])
-METODO = sys.argv[3]
-LINE = sys.argv[4]
-EXPIRES = sys.argv[5]
+#SERVER = sys.argv[1]
+#PORT = int(sys.argv[2])
+#METODO = sys.argv[3]
+#LINE = sys.argv[4]
+#EXPIRES = sys.argv[5]
+
+if len(sys.argv) != 6:
+    sys.exit("Usage: ...")
+_, SERVER, PORT, METODO, LINE, EXPIRES = sys.argv
+PORT = int(PORT)
 
 #SERVER = 'localhost' #string
 #PORT = 6001          #int
