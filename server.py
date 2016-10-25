@@ -16,7 +16,14 @@ class SIPRegisterHandler(socketserver.DatagramRequestHandler):
     
     def register2json(self):
         json.dump(self.misdatos, open('registered.json', 'w'))
-        
+    
+    def json2registered(self):
+        try:
+            with open('registered.json') as client_file:
+                self.misdatos = json.load (client_file)
+        except:
+            self.register2json()
+    
     def time_out(self):
         cliente = []
         for client in self.misdatos:
